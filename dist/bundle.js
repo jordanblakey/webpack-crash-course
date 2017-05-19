@@ -63,44 +63,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
-
-// function getHello(){
-//     return 'Hello there.';
-// }
-
-let people = [
-    {name: 'John Doe'},
-    {name: 'Steve Smith'},
-    {name: 'Carol Williams'}
-];
-
-module.exports = people;
-
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(4);
-let people = __webpack_require__(0);
-let $ = __webpack_require__(2);
-
-
-$.each(people, function(key, value){
-    $('body').append('<h1>' + people[key].name + '</h1>')
-});
-
-console.log(people[0].name);
-
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10360,14 +10327,13 @@ return jQuery;
 
 
 /***/ }),
-/* 3 */,
-/* 4 */
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(5);
+var content = __webpack_require__(3);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -10375,14 +10341,14 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(7)(content, options);
+var update = __webpack_require__(5)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./node_modules/css-loader/index.js!./style.css", function() {
-			var newContent = require("!!./node_modules/css-loader/index.js!./style.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./style.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./style.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -10392,10 +10358,27 @@ if(false) {
 }
 
 /***/ }),
-/* 5 */
+/* 2 */
+/***/ (function(module, exports) {
+
+// function getHello(){
+//     return 'Hello there.';
+// }
+
+let people = [
+    {name: 'John Doe'},
+    {name: 'Steve Smith'},
+    {name: 'Carol Williams'}
+];
+
+module.exports = people;
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(6)(undefined);
+exports = module.exports = __webpack_require__(4)(undefined);
 // imports
 
 
@@ -10406,7 +10389,7 @@ exports.push([module.i, "body {\r\n    background: #f00;\r\n}\r\n", ""]);
 
 
 /***/ }),
-/* 6 */
+/* 4 */
 /***/ (function(module, exports) {
 
 /*
@@ -10488,7 +10471,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 7 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -10525,7 +10508,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(8);
+	fixUrls = __webpack_require__(6);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -10801,7 +10784,7 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 8 */
+/* 6 */
 /***/ (function(module, exports) {
 
 
@@ -10893,6 +10876,22 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(1);
+let people = __webpack_require__(2);
+let $ = __webpack_require__(0);
+
+
+$.each(people, function(key, value){
+    $('body').append('<h1>' + people[key].name + '</h1>')
+});
+
+console.log(people[0].name);
 
 
 /***/ })
