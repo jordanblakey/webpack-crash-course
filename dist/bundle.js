@@ -63,11 +63,26 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// function getHello(){
+//     return 'Hello there.';
+// }
+
+var people = [{ name: 'John Doe' }, { name: 'Steve Smith' }, { name: 'Carol Williams' }];
+
+module.exports = people;
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -10327,13 +10342,13 @@ return jQuery;
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(3);
+var content = __webpack_require__(4);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -10341,7 +10356,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(5)(content, options);
+var update = __webpack_require__(6)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -10358,27 +10373,27 @@ if(false) {
 }
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports) {
-
-// function getHello(){
-//     return 'Hello there.';
-// }
-
-let people = [
-    {name: 'John Doe'},
-    {name: 'Steve Smith'},
-    {name: 'Carol Williams'}
-];
-
-module.exports = people;
-
-
-/***/ }),
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(undefined);
+"use strict";
+
+
+__webpack_require__(2);
+var people = __webpack_require__(0);
+var $ = __webpack_require__(1);
+
+$.each(people, function (key, value) {
+    $('body').append('<h1>' + people[key].name + '</h1>');
+});
+
+console.log(people[0].name);
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
 // imports
 
 
@@ -10389,7 +10404,7 @@ exports.push([module.i, "body {\r\n    background: #f00;\r\n}\r\n", ""]);
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 /*
@@ -10471,7 +10486,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -10508,7 +10523,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(6);
+	fixUrls = __webpack_require__(7);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -10784,7 +10799,7 @@ function updateLink(linkElement, options, obj) {
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports) {
 
 
@@ -10876,22 +10891,6 @@ module.exports = function (css) {
 	// send back the fixed css
 	return fixedCss;
 };
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(1);
-let people = __webpack_require__(2);
-let $ = __webpack_require__(0);
-
-
-$.each(people, function(key, value){
-    $('body').append('<h1>' + people[key].name + '</h1>')
-});
-
-console.log(people[0].name);
 
 
 /***/ })
